@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18A8F8A517E4E70500B1E375 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A8F8A417E4E70500B1E375 /* iAd.framework */; };
 		DA2B1D3B17E1FA7400A20D11 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA2B1D3A17E1FA7400A20D11 /* UIKit.framework */; };
 		DA2B1D3D17E1FA7400A20D11 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA2B1D3C17E1FA7400A20D11 /* Foundation.framework */; };
 		DA2B1D3F17E1FA7400A20D11 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA2B1D3E17E1FA7400A20D11 /* CoreGraphics.framework */; };
@@ -23,6 +24,16 @@
 		DA2B1D6117E1FA7500A20D11 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA2B1D3C17E1FA7400A20D11 /* Foundation.framework */; };
 		DA2B1D6917E1FA7500A20D11 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA2B1D6717E1FA7500A20D11 /* InfoPlist.strings */; };
 		DA2B1D6C17E1FA7500A20D11 /* RLMoneyConvertorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2B1D6B17E1FA7500A20D11 /* RLMoneyConvertorTests.m */; };
+		DA2B1D7617E20E1B00A20D11 /* apple-touch-icon-precomposed.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2B1D7517E20E1B00A20D11 /* apple-touch-icon-precomposed.png */; };
+		DA2B1D7817E20E2700A20D11 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2B1D7717E20E2700A20D11 /* Icon@2x.png */; };
+		DA2B1D8417E2154F00A20D11 /* cad.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2B1D7E17E2154F00A20D11 /* cad.png */; };
+		DA2B1D8517E2154F00A20D11 /* cny.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2B1D7F17E2154F00A20D11 /* cny.png */; };
+		DA2B1D8617E2154F00A20D11 /* eur.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2B1D8017E2154F00A20D11 /* eur.png */; };
+		DA2B1D8717E2154F00A20D11 /* gbp.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2B1D8117E2154F00A20D11 /* gbp.png */; };
+		DA2B1D8817E2154F00A20D11 /* jpy.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2B1D8217E2154F00A20D11 /* jpy.png */; };
+		DA2B1D8917E2154F00A20D11 /* usd.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2B1D8317E2154F00A20D11 /* usd.png */; };
+		DA2B1D8C17E2178E00A20D11 /* ConvertorBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2B1D8B17E2178E00A20D11 /* ConvertorBrain.m */; };
+		DA2B1D8D17E2178E00A20D11 /* ConvertorBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2B1D8B17E2178E00A20D11 /* ConvertorBrain.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18A8F8A417E4E70500B1E375 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		DA2B1D3717E1FA7400A20D11 /* RLMoneyConvertor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RLMoneyConvertor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA2B1D3A17E1FA7400A20D11 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DA2B1D3C17E1FA7400A20D11 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -58,6 +70,16 @@
 		DA2B1D6817E1FA7500A20D11 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DA2B1D6A17E1FA7500A20D11 /* RLMoneyConvertorTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLMoneyConvertorTests.h; sourceTree = "<group>"; };
 		DA2B1D6B17E1FA7500A20D11 /* RLMoneyConvertorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLMoneyConvertorTests.m; sourceTree = "<group>"; };
+		DA2B1D7517E20E1B00A20D11 /* apple-touch-icon-precomposed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apple-touch-icon-precomposed.png"; sourceTree = "<group>"; };
+		DA2B1D7717E20E2700A20D11 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		DA2B1D7E17E2154F00A20D11 /* cad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cad.png; sourceTree = "<group>"; };
+		DA2B1D7F17E2154F00A20D11 /* cny.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cny.png; sourceTree = "<group>"; };
+		DA2B1D8017E2154F00A20D11 /* eur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eur.png; sourceTree = "<group>"; };
+		DA2B1D8117E2154F00A20D11 /* gbp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gbp.png; sourceTree = "<group>"; };
+		DA2B1D8217E2154F00A20D11 /* jpy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jpy.png; sourceTree = "<group>"; };
+		DA2B1D8317E2154F00A20D11 /* usd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = usd.png; sourceTree = "<group>"; };
+		DA2B1D8A17E2178E00A20D11 /* ConvertorBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConvertorBrain.h; sourceTree = "<group>"; };
+		DA2B1D8B17E2178E00A20D11 /* ConvertorBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConvertorBrain.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18A8F8A517E4E70500B1E375 /* iAd.framework in Frameworks */,
 				DA2B1D3B17E1FA7400A20D11 /* UIKit.framework in Frameworks */,
 				DA2B1D3D17E1FA7400A20D11 /* Foundation.framework in Frameworks */,
 				DA2B1D3F17E1FA7400A20D11 /* CoreGraphics.framework in Frameworks */,
@@ -87,6 +110,9 @@
 		DA2B1D2E17E1FA7400A20D11 = {
 			isa = PBXGroup;
 			children = (
+				18A8F8A417E4E70500B1E375 /* iAd.framework */,
+				DA2B1D7717E20E2700A20D11 /* Icon@2x.png */,
+				DA2B1D7517E20E1B00A20D11 /* apple-touch-icon-precomposed.png */,
 				DA2B1D4017E1FA7400A20D11 /* RLMoneyConvertor */,
 				DA2B1D6417E1FA7500A20D11 /* RLMoneyConvertorTests */,
 				DA2B1D3917E1FA7400A20D11 /* Frameworks */,
@@ -117,11 +143,11 @@
 		DA2B1D4017E1FA7400A20D11 /* RLMoneyConvertor */ = {
 			isa = PBXGroup;
 			children = (
-				DA2B1D4917E1FA7400A20D11 /* AppDelegate.h */,
-				DA2B1D4A17E1FA7400A20D11 /* AppDelegate.m */,
 				DA2B1D5217E1FA7500A20D11 /* MainStoryboard.storyboard */,
 				DA2B1D5517E1FA7500A20D11 /* ViewController.h */,
 				DA2B1D5617E1FA7500A20D11 /* ViewController.m */,
+				DA2B1D8A17E2178E00A20D11 /* ConvertorBrain.h */,
+				DA2B1D8B17E2178E00A20D11 /* ConvertorBrain.m */,
 				DA2B1D4117E1FA7400A20D11 /* Supporting Files */,
 			);
 			path = RLMoneyConvertor;
@@ -130,6 +156,9 @@
 		DA2B1D4117E1FA7400A20D11 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DA2B1D7917E2120C00A20D11 /* pictures */,
+				DA2B1D4917E1FA7400A20D11 /* AppDelegate.h */,
+				DA2B1D4A17E1FA7400A20D11 /* AppDelegate.m */,
 				DA2B1D4217E1FA7400A20D11 /* RLMoneyConvertor-Info.plist */,
 				DA2B1D4317E1FA7400A20D11 /* InfoPlist.strings */,
 				DA2B1D4617E1FA7400A20D11 /* main.m */,
@@ -158,6 +187,19 @@
 				DA2B1D6717E1FA7500A20D11 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DA2B1D7917E2120C00A20D11 /* pictures */ = {
+			isa = PBXGroup;
+			children = (
+				DA2B1D7E17E2154F00A20D11 /* cad.png */,
+				DA2B1D7F17E2154F00A20D11 /* cny.png */,
+				DA2B1D8017E2154F00A20D11 /* eur.png */,
+				DA2B1D8117E2154F00A20D11 /* gbp.png */,
+				DA2B1D8217E2154F00A20D11 /* jpy.png */,
+				DA2B1D8317E2154F00A20D11 /* usd.png */,
+			);
+			name = pictures;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +278,14 @@
 				DA2B1D4F17E1FA7400A20D11 /* Default@2x.png in Resources */,
 				DA2B1D5117E1FA7400A20D11 /* Default-568h@2x.png in Resources */,
 				DA2B1D5417E1FA7500A20D11 /* MainStoryboard.storyboard in Resources */,
+				DA2B1D7617E20E1B00A20D11 /* apple-touch-icon-precomposed.png in Resources */,
+				DA2B1D7817E20E2700A20D11 /* Icon@2x.png in Resources */,
+				DA2B1D8417E2154F00A20D11 /* cad.png in Resources */,
+				DA2B1D8517E2154F00A20D11 /* cny.png in Resources */,
+				DA2B1D8617E2154F00A20D11 /* eur.png in Resources */,
+				DA2B1D8717E2154F00A20D11 /* gbp.png in Resources */,
+				DA2B1D8817E2154F00A20D11 /* jpy.png in Resources */,
+				DA2B1D8917E2154F00A20D11 /* usd.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +323,7 @@
 				DA2B1D4717E1FA7400A20D11 /* main.m in Sources */,
 				DA2B1D4B17E1FA7400A20D11 /* AppDelegate.m in Sources */,
 				DA2B1D5717E1FA7500A20D11 /* ViewController.m in Sources */,
+				DA2B1D8C17E2178E00A20D11 /* ConvertorBrain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA2B1D6C17E1FA7500A20D11 /* RLMoneyConvertorTests.m in Sources */,
+				DA2B1D8D17E2178E00A20D11 /* ConvertorBrain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +436,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RLMoneyConvertor/RLMoneyConvertor-Prefix.pch";
 				INFOPLIST_FILE = "RLMoneyConvertor/RLMoneyConvertor-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -395,6 +448,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RLMoneyConvertor/RLMoneyConvertor-Prefix.pch";
 				INFOPLIST_FILE = "RLMoneyConvertor/RLMoneyConvertor-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -453,6 +507,7 @@
 				DA2B1D7117E1FA7500A20D11 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DA2B1D7217E1FA7500A20D11 /* Build configuration list for PBXNativeTarget "RLMoneyConvertorTests" */ = {
 			isa = XCConfigurationList;
@@ -461,6 +516,7 @@
 				DA2B1D7417E1FA7500A20D11 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

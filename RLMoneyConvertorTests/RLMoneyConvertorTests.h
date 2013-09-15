@@ -7,7 +7,7 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
-
+#import "ConvertorBrain.h"
 @interface RLMoneyConvertorTests : SenTestCase
-
+@property(strong,nonatomic)ConvertorBrain * brain;
 @end

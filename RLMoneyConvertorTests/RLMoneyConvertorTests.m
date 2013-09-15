@@ -14,7 +14,6 @@
 {
     [super setUp];
     
-    // Set-up code here.
 }
 
 - (void)tearDown
@@ -26,7 +25,10 @@
 
 - (void)testExample
 {
-    STFail(@"Unit tests are not implemented yet in RLMoneyConvertorTests");
+    self.brain = [[ConvertorBrain alloc] initWithFromCurrency:@"USD" toCurrency:@"GBP" withAmount:100];
+    [self.brain getConvertResult];
+    STAssertEqualObjects(self.brain.rhs, @"62.9802242 British pounds", @"testresult gonna have some value back...");
 }
+
 
 @end

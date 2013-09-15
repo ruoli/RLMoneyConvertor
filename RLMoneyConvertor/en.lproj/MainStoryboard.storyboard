@@ -1,23 +1,123 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2519" systemVersion="12A206j" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1856"/>
+        <deployment version="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--View Controller-->
         <scene sceneID="5">
             <objects>
                 <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u7M-Pd-6fa">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="FdL-JX-KsO"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="2" id="3ff-WD-TUn"/>
+                                    <outlet property="delegate" destination="2" id="alw-zx-SlZ"/>
+                                </connections>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ppG-RE-KiL">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="3UU-R6-IcA"/>
+                                    <constraint firstAttribute="width" constant="115" id="jL5-OC-ZrW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="convertButton:" destination="2" eventType="touchUpInside" id="VkU-hN-ZRJ"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="utD-n9-vsR">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="2" id="fw0-r7-6UN"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vk6-8f-XeB">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="1au-bB-L8B"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="gbp.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ufa-TR-7W6">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="mDh-sc-TjM"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="usd.png" translatesAutoresizingMaskIntoConstraints="NO" id="mIl-CE-6aa">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="61" id="Iwh-Un-8Bt"/>
+                                    <constraint firstAttribute="height" constant="46" id="mZd-OX-Den"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vk6-8f-XeB" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="7Gt-mm-doD"/>
+                            <constraint firstItem="utD-n9-vsR" firstAttribute="top" secondItem="3" secondAttribute="top" constant="270" id="9K8-or-La7"/>
+                            <constraint firstItem="vk6-8f-XeB" firstAttribute="top" secondItem="mIl-CE-6aa" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Dt8-Ng-E9R"/>
+                            <constraint firstItem="u7M-Pd-6fa" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="E4z-uP-s6I"/>
+                            <constraint firstItem="mIl-CE-6aa" firstAttribute="top" secondItem="utD-n9-vsR" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="NPX-Xe-Ae0"/>
+                            <constraint firstItem="Ufa-TR-7W6" firstAttribute="trailing" secondItem="mIl-CE-6aa" secondAttribute="trailing" type="default" id="QCV-df-3AG"/>
+                            <constraint firstItem="mIl-CE-6aa" firstAttribute="centerX" secondItem="ppG-RE-KiL" secondAttribute="centerX" type="default" id="QzI-kU-IWJ"/>
+                            <constraint firstItem="u7M-Pd-6fa" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="T6v-Fx-p90"/>
+                            <constraint firstItem="Ufa-TR-7W6" firstAttribute="top" secondItem="u7M-Pd-6fa" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Ukm-oz-ac3"/>
+                            <constraint firstAttribute="trailing" secondItem="utD-n9-vsR" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Unt-zm-ARJ"/>
+                            <constraint firstItem="utD-n9-vsR" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="YVM-X3-ZLa"/>
+                            <constraint firstItem="Ufa-TR-7W6" firstAttribute="centerX" secondItem="mIl-CE-6aa" secondAttribute="centerX" type="default" id="c6r-Br-fZ7"/>
+                            <constraint firstItem="mIl-CE-6aa" firstAttribute="centerX" secondItem="utD-n9-vsR" secondAttribute="centerX" type="default" id="d4D-vK-6MK"/>
+                            <constraint firstItem="u7M-Pd-6fa" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="hk6-Ch-ooV"/>
+                            <constraint firstAttribute="trailing" secondItem="vk6-8f-XeB" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="qzw-ZD-dqo"/>
+                            <constraint firstAttribute="bottom" secondItem="ppG-RE-KiL" secondAttribute="bottom" constant="59" id="xk1-If-2aY"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="convertorPicker" destination="u7M-Pd-6fa" id="R3d-9Y-EgB"/>
+                        <outlet property="fromField" destination="utD-n9-vsR" id="BqT-1K-P6q"/>
+                        <outlet property="fromImageFlag" destination="Ufa-TR-7W6" id="vP3-AJ-mU9"/>
+                        <outlet property="toField" destination="vk6-8f-XeB" id="lJn-vf-Qr6"/>
+                        <outlet property="toImageFlag" destination="mIl-CE-6aa" id="d95-o9-Ta6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="gbp.png" width="85" height="78"/>
+        <image name="usd.png" width="84" height="79"/>
+    </resources>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="convertButton:"/>
+                <relationship kind="outlet" name="convertorPicker" candidateClass="UIPickerView"/>
+                <relationship kind="outlet" name="fromField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="fromImageFlag" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="toField" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="toImageFlag" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
