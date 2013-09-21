@@ -11,7 +11,6 @@
 @interface ViewController ()
 
 @property (strong, nonatomic) NSArray * colCurrencies;
-
 @end
 
 @implementation ViewController
@@ -102,14 +101,55 @@
 }
 
 - (IBAction)convertButton:(id)sender {
-    [self drawFlag];
-    self.brain = [[ConvertorBrain alloc] initWithFromCurrency:self.fromCurrency toCurrency:self.toCurrency withAmount:[[self.fromField text] intValue]];
-    [self.brain getConvertResult];
-    [self.toField setText:self.brain.rhs];
+
+    //check only digits in string
     
+    if ([[self.fromField text]rangeOfCharacterFromSet:[[NSCharacterSet decimalDigitCharacterSet] invertedSet]].location == NSNotFound) {
+        [self drawFlag];
+        [self.activity startAnimating];
+        [self.convertButton setTitle:@"Converting..." forState:UIControlStateNormal];
+        [self doConvertingAsync];
+    }
+    else
+        [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Check your input value." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    
+        
     if ([self.fromField isFirstResponder]) {
         [self.fromField resignFirstResponder];
     }
+}
+
+- (void)doConvertingAsync
+{
+    dispatch_queue_t currencyFetchQueue = dispatch_queue_create("currency exchange fetcher", NULL);
+    dispatch_async(currencyFetchQueue, ^{
+        [NSThread sleepForTimeInterval:2.0];
+        self.brain = [[ConvertorBrain alloc] initWithFromCurrency:self.fromCurrency toCurrency:self.toCurrency withAmount:[[self.fromField text] intValue]];
+        [self.brain getConvertResult];
+        if (![self.brain.rhs isEqual:NULL]) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.toField setText:self.brain.rhs];
+                [self.fromField setText:self.brain.lhs];
+                [self.convertButton setTitle:@"convert" forState:UIControlStateNormal];
+                [self.activity stopAnimating];
+            });
+        }
+    });
+    
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),^ {
+//     
+//            self.brain = [[ConvertorBrain alloc] initWithFromCurrency:self.fromCurrency toCurrency:self.toCurrency withAmount:[[self.fromField text] intValue]];
+//            [self.brain getConvertResult];
+//        if ([self.brain.rhs isEqual:NULL]) {
+//            dispatch_async(dispatch_get_main_queue(),^{
+//                [self.toField setText:self.brain.rhs];
+//                [self.fromField setText:self.brain.lhs];
+//                [self.convertButton setTitle:@"convert" forState:UIControlStateNormal];
+//                [self.activity stopAnimating];
+//            });
+//        }
+//    });
+    
 }
 
 -(void)drawFlag

@@ -45,10 +45,12 @@
                           error:&error];
     
     NSString* convertedvalue = [json objectForKey:@"rhs"];
+    NSString* initalValue = [json objectForKey:@"lhs"];
     
-    if(error == nil)
+    if(error == nil){
         self.rhs = convertedvalue;
-    else {
+        self.lhs = initalValue;
+    } else {
         NSLog(@"converted epic fail!!");
     }
     

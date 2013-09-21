@@ -22,8 +22,10 @@
 @property (strong, nonatomic) IBOutlet UIPickerView *convertorPicker;
 @property (strong, nonatomic) IBOutlet UIImageView *fromImageFlag;
 @property (strong, nonatomic) IBOutlet UIImageView *toImageFlag;
+@property (strong, nonatomic) IBOutlet UIButton *convertButton;
 @property (strong, nonatomic) IBOutlet UITextField *fromField;
 @property (strong, nonatomic) IBOutlet UILabel *toField;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activity;
 
 @property (strong, nonatomic) NSString * fromCurrency;
 @property (strong, nonatomic) NSString * toCurrency;
