@@ -123,7 +123,6 @@
 {
     dispatch_queue_t currencyFetchQueue = dispatch_queue_create("currency exchange fetcher", NULL);
     dispatch_async(currencyFetchQueue, ^{
-        [NSThread sleepForTimeInterval:2.0];
         self.brain = [[ConvertorBrain alloc] initWithFromCurrency:self.fromCurrency toCurrency:self.toCurrency withAmount:[[self.fromField text] intValue]];
         [self.brain getConvertResult];
         if (![self.brain.rhs isEqual:NULL]) {
@@ -135,20 +134,6 @@
             });
         }
     });
-    
-//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),^ {
-//     
-//            self.brain = [[ConvertorBrain alloc] initWithFromCurrency:self.fromCurrency toCurrency:self.toCurrency withAmount:[[self.fromField text] intValue]];
-//            [self.brain getConvertResult];
-//        if ([self.brain.rhs isEqual:NULL]) {
-//            dispatch_async(dispatch_get_main_queue(),^{
-//                [self.toField setText:self.brain.rhs];
-//                [self.fromField setText:self.brain.lhs];
-//                [self.convertButton setTitle:@"convert" forState:UIControlStateNormal];
-//                [self.activity stopAnimating];
-//            });
-//        }
-//    });
     
 }
 
