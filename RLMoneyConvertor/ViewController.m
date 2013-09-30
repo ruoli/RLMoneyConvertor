@@ -97,7 +97,116 @@
 -(void)setupPicker
 {
     self.convertorPicker.showsSelectionIndicator = TRUE;
-    self.colCurrencies = [[NSArray alloc] initWithObjects:@"USD", @"GBP", @"CNY", @"JPY", @"EUR", nil];
+    self.colCurrencies = [[NSArray alloc] initWithObjects:
+                          @"United Arab Emirates Dirham (AED)",
+                          @"Netherlands Antillean Guilder (ANG)",
+                          @"Argentine Peso (ARS)",
+                          @"Australian Dollar (AUD)",
+                          @"Bangladeshi Taka (BDT)",
+                          @"Bulgarian Lev (BGN)",
+                          @"Bahraini Dinar (BHD)",
+                          @"Brunei Dollar (BND)",
+                          @"Bolivian Boliviano (BOB)",
+                          @"Brazilian Real (BRL)",
+                          @"Botswanan Pula (BWP)",
+                          @"Canadian Dollar (CAD)",
+                          @"Swiss Franc (CHF)",
+                          @"Chilean Peso (CLP)",
+                          @"Chinese Yuan (CNY)",
+                          @"Colombian Peso (COP)",
+                          @"Costa Rican Colón (CRC)",
+                          @"Czech Republic Koruna (CZK)",
+                          @"Danish Krone (DKK)",
+                          @"Dominican Peso (DOP)",
+                          @"Algerian Dinar (DZD)",
+                          @"Estonian Kroon (EEK)",
+                          @"Egyptian Pound (EGP)",
+                          @"Euro (EUR)",
+                          @"Fijian Dollar (FJD)",
+                          @"British Pound Sterling (GBP)",
+                          @"Hong Kong Dollar (HKD)",
+                          @"Honduran Lempira (HNL)",
+                          @"Croatian Kuna (HRK)",
+                          @"Hungarian Forint (HUF)",
+                          @"Indonesian Rupiah (IDR)",
+                          @"Israeli New Sheqel (ILS)",
+                          @"Indian Rupee (INR)",
+                          @"Jamaican Dollar (JMD)",
+                          @"Jordanian Dinar (JOD)",
+                          @"Japanese Yen (JPY)",
+                          @"Kenyan Shilling (KES)",
+                          @"South Korean Won (KRW)",
+                          @"Kuwaiti Dinar (KWD)",
+                          @"Cayman Islands Dollar (KYD)",
+                          @"Kazakhstani Tenge (KZT)",
+                          @"Lebanese Pound (LBP)",
+                          @"Sri Lankan Rupee (LKR)",
+                          @"Lithuanian Litas (LTL)",
+                          @"Latvian Lats (LVL)",
+                          @"Moroccan Dirham (MAD)",
+                          @"Moldovan Leu (MDL)",
+                          @"Macedonian Denar (MKD)",
+                          @"Mauritian Rupee (MUR)",
+                          @"Maldivian Rufiyaa (MVR)",
+                          @"Mexican Peso (MXN)",
+                          @"Malaysian Ringgit (MYR)",
+                          @"Namibian Dollar (NAD)",
+                          @"Nigerian Naira (NGN)",
+                          @"Nicaraguan Córdoba (NIO)",
+                          @"Norwegian Krone (NOK)",
+                          @"Nepalese Rupee (NPR)",
+                          @"New Zealand Dollar (NZD)",
+                          @"Omani Rial (OMR)",
+                          @"Peruvian Nuevo Sol (PEN)",
+                          @"Papua New Guinean Kina (PGK)",
+                          @"Philippine Peso (PHP)",
+                          @"Pakistani Rupee (PKR)",
+                          @"Polish Zloty (PLN)",
+                          @"Paraguayan Guarani (PYG)",
+                          @"Qatari Rial (QAR)",
+                          @"Romanian Leu (RON)",
+                          @"Serbian Dinar (RSD)",
+                          @"Russian Ruble (RUB)",
+                          @"Saudi Riyal (SAR)",
+                          @"Seychellois Rupee (SCR)",
+                          @"Swedish Krona (SEK)",
+                          @"Singapore Dollar (SGD)",
+                          @"Slovak Koruna (SKK)",
+                          @"Sierra Leonean Leone (SLL)",
+                          @"Salvadoran Colón (SVC)",
+                          @"Thai Baht (THB)",
+                          @"Tunisian Dinar (TND)",
+                          @"Turkish Lira (TRY)",
+                          @"Trinidad and Tobago Dollar (TTD)",
+                          @"New Taiwan Dollar (TWD)",
+                          @"Tanzanian Shilling (TZS)",
+                          @"Ukrainian Hryvnia (UAH)",
+                          @"Ugandan Shilling (UGX)",
+                          @"US Dollar (USD)",
+                          @"Uruguayan Peso (UYU)",
+                          @"Uzbekistan Som (UZS)",
+                          @"Venezuelan Bolívar (VEF)",
+                          @"Vietnamese Dong (VND)",
+                          @"CFA Franc BCEAO (XOF)",
+                          @"Yemeni Rial (YER)",
+                          @"South African Rand (ZAR)",
+                          @"Zambian Kwacha (ZMK)", nil];
+    //    self.colCurrencies = [[NSArray alloc] initWithObjects:@"USD", @"GBP", @"CNY", @"JPY", @"EUR", nil];
+}
+
+-(NSString *)extractCurrencySign:(NSString *)currency
+{
+    NSString *resultString;
+    
+    NSRange startRange = [currency rangeOfString:@"("];
+    NSRange searchRange = NSMakeRange(0, startRange.location);
+    NSString *resultCurrencySign = [currency stringByReplacingCharactersInRange:searchRange withString:@""];
+    
+    NSCharacterSet *doNotWant = [NSCharacterSet characterSetWithCharactersInString:@"()"];
+    resultString = [[resultCurrencySign componentsSeparatedByCharactersInSet: doNotWant] componentsJoinedByString: @""];
+    //    resultString = [resultCurrencySign stringByReplacingOccurrencesOfString:@"(" withString:@""];
+    //    resultString = [resultCurrencySign stringByReplacingOccurrencesOfString:@")" withString:@""];
+    return resultString;
 }
 
 - (IBAction)convertButton:(id)sender {
@@ -165,9 +274,9 @@
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
     if (component == 0) {
-        self.fromCurrency = [self.colCurrencies objectAtIndex:row];
+        self.fromCurrency = [self extractCurrencySign:[self.colCurrencies objectAtIndex:row]];
     }else{
-        self.toCurrency = [self.colCurrencies objectAtIndex:row];
+        self.toCurrency = [self extractCurrencySign:[self.colCurrencies objectAtIndex:row]];
     }
 }
 

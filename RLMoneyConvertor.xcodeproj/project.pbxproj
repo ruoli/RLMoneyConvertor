@@ -249,6 +249,11 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Rouli Zhou";
+				TargetAttributes = {
+					DA2B1D3617E1FA7400A20D11 = {
+						DevelopmentTeam = 53572RLZAD;
+					};
+				};
 			};
 			buildConfigurationList = DA2B1D3217E1FA7400A20D11 /* Build configuration list for PBXProject "RLMoneyConvertor" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -433,11 +438,14 @@
 		DA2B1D7017E1FA7500A20D11 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RLMoneyConvertor/RLMoneyConvertor-Prefix.pch";
 				INFOPLIST_FILE = "RLMoneyConvertor/RLMoneyConvertor-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -445,11 +453,14 @@
 		DA2B1D7117E1FA7500A20D11 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RLMoneyConvertor/RLMoneyConvertor-Prefix.pch";
 				INFOPLIST_FILE = "RLMoneyConvertor/RLMoneyConvertor-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
