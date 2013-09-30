@@ -15,8 +15,8 @@
 @property(assign,nonatomic)int amount;
 @property (strong, nonatomic) NSArray *tempArray;
 
-@property (strong, nonatomic) NSString * lhs;
-@property (strong, nonatomic) NSString * rhs;
+@property (strong, nonatomic) NSString * valueBeforeConverted;
+@property (strong, nonatomic) NSString * valueAfterConverted;
 
 @property (nonatomic, strong) NSMutableData *responseData;
 

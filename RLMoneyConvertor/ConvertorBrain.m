@@ -24,36 +24,34 @@
 
 -(void)getConvertResult
 {
-        NSString *searchLocation = [NSString stringWithFormat:@"http://www.google.com/ig/calculator?hl=en&q=%d%@=?%@", self.amount, self.fromCurrency, self.toCurrency];
+        NSString *searchLocation = [NSString stringWithFormat:@"http://rate-exchange.appspot.com/currency?from=%@&to=%@&q=%d", self.fromCurrency, self.toCurrency, self.amount];
         NSURL *convertedResults = [NSURL URLWithString:[searchLocation stringByAddingPercentEscapesUsingEncoding:
                                                         NSUTF8StringEncoding]];
         
         NSData *JSONData = [NSData dataWithContentsOfURL:convertedResults];
     
-    NSString *result = [[NSString alloc] initWithBytes:[JSONData bytes] length:[JSONData length] encoding:NSUTF8StringEncoding];
+//    NSString *result = [[NSString alloc] initWithBytes:[JSONData bytes] length:[JSONData length] encoding:NSUTF8StringEncoding];
     NSError *error = NULL;
     //google is not sending valid JSOn so convert into valid JSON
-    NSString *resultdata = result;
-    resultdata = [resultdata stringByReplacingOccurrencesOfString:@"{" withString:@"{\""];
-    resultdata = [resultdata stringByReplacingOccurrencesOfString:@"," withString:@",\""];
-    resultdata = [resultdata stringByReplacingOccurrencesOfString:@":" withString:@"\":"];
+//    NSString *resultdata = result;
+//    resultdata = [resultdata stringByReplacingOccurrencesOfString:@"{" withString:@"{\""];
+//    resultdata = [resultdata stringByReplacingOccurrencesOfString:@"," withString:@",\""];
+//    resultdata = [resultdata stringByReplacingOccurrencesOfString:@":" withString:@"\":"];
     
-    NSData* data = [resultdata dataUsingEncoding:NSUTF8StringEncoding];
+//    NSData* data = [resultdata dataUsingEncoding:NSUTF8StringEncoding];
     NSDictionary* json = [NSJSONSerialization
-                          JSONObjectWithData:data
+                          JSONObjectWithData:JSONData
                           options:kNilOptions
                           error:&error];
     
-    NSString* convertedvalue = [json objectForKey:@"rhs"];
-    NSString* initalValue = [json objectForKey:@"lhs"];
-    
+    NSString* afterConvert =[NSString stringWithFormat:@"%@ : %@", self.toCurrency, [json objectForKey:@"v"]];
+    NSString* initalValue = [NSString stringWithFormat:@"%@ : %d", self.fromCurrency, self.amount];
     if(error == nil){
-        self.rhs = convertedvalue;
-        self.lhs = initalValue;
+        self.valueAfterConverted = afterConvert;
+        self.valueBeforeConverted = initalValue;
     } else {
         NSLog(@"converted epic fail!!");
     }
-    
 }
 
 @end

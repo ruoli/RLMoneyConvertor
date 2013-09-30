@@ -19,7 +19,7 @@
 {
     if (!self.bannerIsVisible) {
         [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
-        banner.frame = CGRectOffset(banner.frame, 0, -70.0f);
+        banner.frame = CGRectOffset(banner.frame, 0, -50.0f);
         [UIView commitAnimations];
         self.bannerIsVisible = YES;
     }
@@ -125,10 +125,10 @@
     dispatch_async(currencyFetchQueue, ^{
         self.brain = [[ConvertorBrain alloc] initWithFromCurrency:self.fromCurrency toCurrency:self.toCurrency withAmount:[[self.fromField text] intValue]];
         [self.brain getConvertResult];
-        if (![self.brain.rhs isEqual:NULL]) {
+        if (![self.brain.valueAfterConverted isEqual:NULL]) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self.toField setText:self.brain.rhs];
-                [self.fromField setText:self.brain.lhs];
+                [self.toField setText:self.brain.valueAfterConverted];
+                [self.fromField setText:self.brain.valueBeforeConverted];
                 [self.convertButton setTitle:@"convert" forState:UIControlStateNormal];
                 [self.activity stopAnimating];
             });
